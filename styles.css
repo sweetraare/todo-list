@@ -89,7 +89,7 @@ form button:hover {
 
 .fa-check,
 .fa-trash {
-  pointer-events: none;
+  pointer-events: none; /* remove click event from icon */
 }
 
 .done {
@@ -101,4 +101,44 @@ form button:hover {
 .removed {
   transform: translateY(8rem) rotateZ(120deg);
   opacity: 0;
+}
+
+/* remove all styles from select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #e55d87;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background-color: white;
+  color: #5fc3e4;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.select:hover::after {
+  color: white;
+  background-color: #e55d87;
 }
