@@ -75,3 +75,5 @@ function filterTodos(e) {
     }
   });
 }
+
+//todo: Add localstorage
